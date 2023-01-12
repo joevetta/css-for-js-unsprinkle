@@ -8,14 +8,24 @@ const Hero = () => {
     <Wrapper>
       <picture>
         <source
-          type="image/jpeg"
+          type="image/avif"
           srcSet={`
               ${src.replace(".jpg", ".avif")} 1x, 
               ${src.replace(".jpg", "@2x.avif")} 2x,
               ${src.replace(".jpg", "@3x.avif")} 3x,
               `}
         />
-        <HeroImage src={src} />
+        <source
+          type="image/jpg"
+          srcSet={`
+              ${src.replace(".jpg", "@2x.jpg")} 2x,
+              ${src.replace(".jpg", "@3x.jpg")} 3x,
+              `}
+        />
+        <HeroImage
+          alt="An example of the photos distributed through this site (cat on black background)"
+          src={src}
+        />
       </picture>
       <Swoop src="/swoop.svg" />
     </Wrapper>
