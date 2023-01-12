@@ -50,22 +50,23 @@ const Image = styled.img`
 `;
 
 const Tags = styled.ul`
-  display: block;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 100%;
+  padding: 8px 0;
 `;
 
 const Tag = styled.li`
   display: inline;
-  line-height: 1.875em;
-  margin-right: 4px;
   padding: 4px 8px;
   background: var(--color-gray-300);
   font-size: 0.875rem;
   font-weight: 475;
   color: var(--color-gray-800);
+
+  &:not(:last-of-type) {
+    margin-right: 8px;
+  }
 `;
 
 export default PhotoGridItem;
